@@ -1,0 +1,268 @@
+<html manifest="cache.manifest"><!--  -->
+<head>
+<title>6.72 Exploit Menu v7</title>
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Muli:wght@300&display=swap" rel="stylesheet">
+<style>
+.button {
+  background-color: #6372bd;
+  border-radius: 5px;
+  color: black;
+  padding: .5em;
+  text-decoration: none;
+  height:40px;
+  display:inline-table;
+  margin-right: 10px;
+  width:200px;
+}
+
+.button:focus,
+.button:hover {
+  background-color: White;
+  color: black;
+}
+.header {
+  padding: 20px;
+  text-align: center;
+  background: #3397c7;
+  color: black;
+  font-size: 25px;
+  font-family: 'Helvetica Neue LT Standard', cursive;
+}
+</style>
+<div class="header"><script>
+function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Installing Offline Cache: " + Percent + "%";}
+function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cache Installed Successfully";},1000);setTimeout(function(){window.msgs.innerHTML="Now Close And Re-Open Your Browser";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+</script>
+<script src="exp_webkit.js"></script>
+</head>
+<body style= "background: linear-gradient(90deg, rgba(119,119,130,1) 8%, rgba(116,113,153,1) 23%, rgba(89,79,173,1) 42%, rgba(70,70,185,1) 57%, rgba(25,125,145,1) 76%, rgba(25,125,145,1) 77%, rgba(5,108,129,1) 90%);">
+<h1 id=msgs>6.72 Exploit Menu</h1><p>modified by <strong>Maruko</strong></p>
+</div>
+<hr>
+
+<br>
+<!--<h1 style='font-size:18px;text-align:center;'>LOAD JAILBREAK</h1>-->
+<div style="text-align:center">
+<!--<button onclick="load_exploit_HEN(); return false"> HEN v2.1.3 </button>
+<button onclick="load_exploit_MIRA(); return false"> Mira </button>
+<button onclick="load_exploit_MIRAunoff(); return false"> Mira (Unofficial) </button>
+<button onclick="load_exploit_MIRAnohb(); return false"> Mira (NoHB) </button>
+<br><br>
+<div text-align= center>Pass = <span id=passCounter></span>&nbsp;&nbsp;:&nbsp;&nbsp;Fail = <span id=failCounter></span></div>
+<br><br>-->
+<h1 style="font-size:28px;text-align:center;color:white;font-family: 'Helvetica Neue LT Standard', cursive;">PAYLOADS</h1>
+<br><br><br>
+<div>
+<a href="#"><button class="button"onclick="load_binloader(); return false"> Bin Loader </button></a>
+<button class="button"onclick="load_updatesenable(); return false"> Enable Updates </button>
+<button class="button"onclick="load_updatesdisable(); return false"> Disable Updates </button>
+<button class="button"onclick="load_historyblock(); return false"> History Blocker </button>
+<button class="button"onclick="load_kerneldump(); return false"> Kernel Dumper </button>
+<br><br>
+<button class="button"onclick="load_ftp(); return false"> FTP </button>
+<button class="button"onclick="load_dumper(); return false"> Dumper </button>
+<button class="button"onclick="load_linux(); return false"> Linux </button>
+<button class="button"onclick="load_app2usb(); return false"> App2USB </button>
+<button class="button"onclick="load_webrte(); return false"> WebRTE </button>
+<button class="button"onclick="load_ps4debug(); return false"> PS4debug </button>
+<br><br>
+<button class="button"onclick="load_dbBackup(); return false"> DB Backup </button>
+<button class="button"onclick="load_dbRestore(); return false"> DB Restore </button>
+<button class="button"onclick="load_todex(); return false"> ToDEX </button>
+<button class="button"onclick="load_todev(); return false"> ToDEV </button>
+<button class="button"onclick="load_tokratos(); return false"> ToKratos </button>
+<br><br>
+<button class="button"onclick="load_fanthresh(); return false"> Set Fan Threshold </button><select id="tempC"class="button"></select>&#176;C<br><br>The PS4's default temp is 79&#176;C
+</div>
+<script>
+for(var i=40; i<=79; i++){
+    var select = document.getElementById("tempC");
+    var option = document.createElement("OPTION");
+	select.options.add(option);
+	option.text = i;
+	option.value = i;
+}
+tempC.value=60;
+</script>
+<br>
+</div>
+<script>
+if (localStorage.passcount == null) localStorage.passcount=0;
+window.passCounter.innerHTML=localStorage.passcount;
+if (localStorage.failcount == null) localStorage.failcount=0;
+window.failCounter.innerHTML=localStorage.failcount;
+
+/*function load_exploit_HEN(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Exploit And HEN ...</h1>";
+LoadedMSG="Exploit And HEN Loaded ✔ - Press Circle To Exit";
+function getScript(source,callback){var gs=document.createElement('script');gs.src=source;gs.onload=callback;gs.async=false;document.body.appendChild(gs);}
+function loadScript(){getScript("exp_kernelHEN.js",function(){setTimeout(jailbreak,500);});}loadScript();
+}
+
+function load_exploit_MIRA(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Exploit And Mira ...</h1>";
+LoadedMSG="Exploit And Mira Loaded ✔ - Press Circle To Exit";
+function getScript(source,callback){var gs=document.createElement('script');gs.src=source;gs.onload=callback;gs.async=false;document.body.appendChild(gs);}
+function loadScript(){getScript("exp_kernelMira.js",function(){setTimeout(jailbreak,500);});}loadScript();
+}
+
+function load_exploit_MIRAunoff(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Exploit And Mira(Unofficial) ...</h1>";
+LoadedMSG="Exploit And Mira(Unofficial) Loaded ✔ - Press Circle To Exit";
+function getScript(source,callback){var gs=document.createElement('script');gs.src=source;gs.onload=callback;gs.async=false;document.body.appendChild(gs);}
+function loadScript(){getScript("exp_kernelMiraUN.js",function(){setTimeout(jailbreak,500);});}loadScript();
+}
+
+function load_exploit_MIRAnohb(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Exploit And Mira(NoHB) ...</h1>";
+LoadedMSG="Exploit And Mira(NoHB) Loaded ✔ - Press Circle To Exit";
+function getScript(source,callback){var gs=document.createElement('script');gs.src=source;gs.onload=callback;gs.async=false;document.body.appendChild(gs);}
+function loadScript(){getScript("exp_kernelMiraNoHB.js",function(){setTimeout(jailbreak,500);});}loadScript();
+}*/
+
+function load_binloader(){
+msgs.innerHTML="<h1 style='font-size:50px;text-align:center;'>Loading Bin Loader ...</h1>";
+LoadedMSG="<h1 style='font-size:50px;text-align:center;'>Send Payload To Port 9021</h1>";
+var script = document.createElement('script');script.src = "exp_BinLoader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function load_ftp(){
+msgs.innerHTML="<h1 style='font-size:50px;text-align:center;'>Loading FTP ...</h1>";
+LoadedMSG="<h1 style='font-size:50px;text-align:center;'>FTP Loaded ✔</h1>";
+var script = document.createElement('script');script.src = "pl_ftp.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function load_dumper(){
+msgs.innerHTML="<h1 style='font-size:50px;text-align:center;'>Loading Dumper ...</h1>";
+LoadedMSG="<h1 style='font-size:50px;text-align:center;'>Dumper Loaded ✔</h1>";
+var script = document.createElement('script');script.src = "pl_dumper.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function load_linux(){
+msgs.innerHTML="<h1 style='font-size:50px;text-align:center;'>Loading Linux ...</h1>";
+LoadedMSG="<h1 style='font-size:50px;text-align:center;'>Linux Loaded ✔</h1>";
+var script = document.createElement('script');script.src = "pl_linux.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function load_app2usb(){
+msgs.innerHTML="<h1 style='font-size:50px;text-align:center;'>Loading AppToUSB ...</h1>";
+LoadedMSG="<h1 style='font-size:50px;text-align:center;'>AppToUSB Loaded ✔</h1>";
+var script = document.createElement('script');script.src = "pl_app2usb.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function load_kerneldump(){
+msgs.innerHTML="<h1 style='font-size:50px;text-align:center;'>Loading Kernel Dumper ...</h1>";
+LoadedMSG="<h1 style='font-size:50px;text-align:center;'>Kernel Dumper Loaded ✔</h1>";
+var script = document.createElement('script');script.src = "pl_kernelDumper.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function load_webrte(){
+msgs.innerHTML="<h1 style='font-size:50px;text-align:center;'>Loading WebRTE ...</h1>";
+LoadedMSG="<h1 style='font-size:50px;text-align:center;'>WebRTE Loaded ✔</h1>";
+var script = document.createElement('script');script.src = "pl_WebRTE.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function load_ps4debug(){
+msgs.innerHTML="<h1 style='font-size:50px;text-align:center;'>Loading PS4Debug ...</h1>";
+LoadedMSG="<h1 style='font-size:50px;text-align:center;'>PS4Debug Loaded ✔</h1>";
+var script = document.createElement('script');script.src = "pl_ps4debug.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function load_todex(){
+msgs.innerHTML="<h1 style='font-size:50px;text-align:center;'>Loading ToDEX ...</h1>";
+LoadedMSG="<h1 style='font-size:50px;text-align:center;'>ToDEX Loaded ✔</h1>";
+var script = document.createElement('script');script.src = "pl_ToDEX.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function load_todev(){
+msgs.innerHTML="<h1 style='font-size:50px;text-align:center;'>Loading ToDEV ...</h1>";
+LoadedMSG="<h1 style='font-size:50px;text-align:center;'>ToDEV Loaded ✔</h1>";
+var script = document.createElement('script');script.src = "pl_ToDEV.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function load_tokratos(){
+msgs.innerHTML="<h1 style='font-size:50px;text-align:center;'>Loading ToKratos ...</h1>";
+LoadedMSG="<h1 style='font-size:50px;text-align:center;'>ToKratos Loaded ✔</h1>";
+var script = document.createElement('script');script.src = "pl_ToKratos.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function load_historyblock(){
+msgs.innerHTML="<h1 style='font-size:50px;text-align:center;'>Loading History Blocker ...</h1>";
+LoadedMSG="<h1 style='font-size:50px;text-align:center;'>History Blocker Loaded ✔</h1>";
+var script = document.createElement('script');script.src = "pl_historyBlocker.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function load_updatesdisable(){
+msgs.innerHTML="<h1 style='font-size:50px;text-align:center;'>Loading Disable Updates ...</h1>";
+LoadedMSG="<h1 style='font-size:50px;text-align:center;'>Disable Updates Loaded ✔</h1>";
+var script = document.createElement('script');script.src = "pl_updatesDisable.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function load_updatesenable(){
+msgs.innerHTML="<h1 style='font-size:50px;text-align:center;'>Loading Enable Updates ...</h1>";
+LoadedMSG="<h1 style='font-size:50px;text-align:center;'>Enable Updates Loaded ✔</h1>";
+var script = document.createElement('script');script.src = "pl_updatesEnable.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function load_dbBackup(){
+msgs.innerHTML="<h1 style='font-size:50px;text-align:center;'>Loading DB Backup ...</h1>";
+LoadedMSG="<h1 style='font-size:50px;text-align:center;'>DB Backup Loaded ✔</h1>";
+var script = document.createElement('script');script.src = "pl_dbBackup.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function load_dbRestore(){
+msgs.innerHTML="<h1 style='font-size:50px;text-align:center;'>Loading DB Restore ...</h1>";
+LoadedMSG="<h1 style='font-size:50px;text-align:center;'>DB Restore Loaded ✔</h1>";
+var script = document.createElement('script');script.src = "pl_dbRestore.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function load_fanthresh(){
+msgs.innerHTML="<h1 style='font-size:50px;text-align:center;'>Loading Fan Threshold ...</h1>";
+LoadedMSG="<h1 style='font-size:50px;text-align:center;'>Fan Threshold Loaded ✔</h1>";fanTemp=tempC.value;//alert(fanTemp);
+var script = document.createElement('script');script.src = "pl_fanthresh.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+function getCookie(name) {
+  var name = name + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function setCookie(name, value, mins) {
+  var d = new Date();
+  d.setTime(d.getTime() + (mins*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+function deleteCookie(name) {
+  document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";}
+</script>
+<p style="position:absolute; bottom:0px;font-size:17px;">Credit to Leeful</p>
+</body>
+</html>
