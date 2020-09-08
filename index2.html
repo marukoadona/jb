@@ -3,9 +3,9 @@
 <title>6.72 Exploit Menu v7</title>
 <style>
 .button {
-  background-color: black;
+  background-color: #6372bd;
   border-radius: 5px;
-  color: white;
+  color: black;
   padding: .5em;
   text-decoration: none;
   height:40px;
@@ -13,9 +13,11 @@
   margin-right: 10px;
   width:200px;
 }
+
 .button:hover {
-  background-color: black;
-  color: white;
+  background-color: White;
+  color: black;
+  background: #e5e5e5;
   outline: none;
   -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
      -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
@@ -31,9 +33,9 @@
 }
 </style>
 <div class="header"><script>
-//function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Installing Offline Cache: " + Percent + "%";}
-//function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cache Installed Successfully";},1000);setTimeout(function(){window.msgs.innerHTML="Now Close And Re-Open Your Browser";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
-//</script>
+function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Installing Offline Cache: " + Percent + "%";}
+function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cache Installed Successfully";},1000);setTimeout(function(){window.msgs.innerHTML="Now Close And Re-Open Your Browser";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+</script>
 <script src="exp_webkit.js"></script>
 </head>
 <body style= "background: linear-gradient(90deg, rgba(119,119,130,1) 8%, rgba(116,113,153,1) 23%, rgba(89,79,173,1) 42%, rgba(70,70,185,1) 57%, rgba(25,125,145,1) 76%, rgba(25,125,145,1) 77%, rgba(5,108,129,1) 90%);">
@@ -53,7 +55,6 @@
 <br><br>-->
 <h1 style="font-size:28px;text-align:center;color:white;font-family: 'Helvetica Neue LT Standard', cursive;">PAYLOADS</h1>
 <br><br><br>
-<div>
 <button class="button"onclick="load_binloader(); return false"> Bin Loader </button>
 <button class="button"onclick="load_updatesenable(); return false"> Enable Updates </button>
 <button class="button"onclick="load_updatesdisable(); return false"> Disable Updates </button>
@@ -61,11 +62,11 @@
 <button class="button"onclick="load_kerneldump(); return false"> Kernel Dumper </button>
 <br><br>
 <button class="button"onclick="load_ftp(); return false"> FTP </button>
-<button class="button"onclick="load_dumper(); return false"> Dumper </button>
 <button class="button"onclick="load_linux(); return false"> Linux </button>
 <button class="button"onclick="load_app2usb(); return false"> App2USB </button>
 <button class="button"onclick="load_webrte(); return false"> WebRTE </button>
 <button class="button"onclick="load_ps4debug(); return false"> PS4debug </button>
+<button class="button"onclick="load_dumper(); return false"> Dumper </button>
 <br><br>
 <button class="button"onclick="load_dbBackup(); return false"> DB Backup </button>
 <button class="button"onclick="load_dbRestore(); return false"> DB Restore </button>
@@ -74,7 +75,6 @@
 <button class="button"onclick="load_tokratos(); return false"> ToKratos </button>
 <br><br>
 <button class="button"onclick="load_fanthresh(); return false"> Set Fan Threshold </button><select id="tempC"class="button"></select>&#176;C<br><br>The PS4's default temp is 79&#176;C
-</div>
 <script>
 for(var i=40; i<=79; i++){
     var select = document.getElementById("tempC");
