@@ -13,12 +13,18 @@
   display:inline-table;
   margin-right: 10px;
   width:200px;
+  box-shadow: none;
 }
 
 .button:focus,
 .button:hover {
   background-color: White;
   color: black;
+  background: #e5e5e5;
+  outline: none;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
 }
 .header {
   padding: 20px;
@@ -237,31 +243,7 @@ LoadedMSG="<h1 style='font-size:50px;text-align:center;'>Fan Threshold Loaded âœ
 var script = document.createElement('script');script.src = "pl_fanthresh.js";document.getElementsByTagName('head')[0].appendChild(script);
 var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
 }
-function getCookie(name) {
-  var name = name + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
 
-function setCookie(name, value, mins) {
-  var d = new Date();
-  d.setTime(d.getTime() + (mins*60*1000));
-  var expires = "expires="+ d.toUTCString();
-  document.cookie = name + "=" + value + ";" + expires + ";path=/";
-}
-
-function deleteCookie(name) {
-  document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";}
 </script>
 <p style="position:absolute; bottom:0px;font-size:17px;">Credit to Leeful</p>
 </body>
