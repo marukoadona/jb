@@ -45,7 +45,7 @@
 <meta charset="utf-8"/>
 <div class="header"><h1 id=msgs>6.72 Exploit Menu v7 by Leeful</h1>
 <p style="font-size:18px;"><strong>UI by MarukoAdona</strong></p>
-<div style="font-size:20px;">Pass = <span id=passCounter></span>&nbsp;&nbsp;:&nbsp;&nbsp;Fail = <span id=failCounter></span></div>
+<div style="font-size:20px;">Pass = <span id=passCounter></span>&nbsp;&nbsp;:&nbsp;&nbsp;Fail = <span id=failCounter></span></div><hr>
 <script>
 function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Installing Offline Cache: " + Percent + "%";}
 function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cache Installed Successfully";},1000);setTimeout(function(){window.msgs.innerHTML="Now Close And Re-Open Your Browser";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
@@ -65,7 +65,7 @@ function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cac
 <button class="button"onclick="load_exploit_MIRA(); return false"> Mira </button>
 <button class="button"onclick="load_exploit_MIRAunoff(); return false"> Mira (Unofficial)</button>
 <button class="button"onclick="load_exploit_MIRAnohb(); return false"> Mira (NoHB) </button>
-<br><br><hr>
+<br><br>
 <p style="font-size:17px;text-align:center;">--- PAYLOADS ---</p>
 <br>
 <button class="button"onclick="load_binloader(); return false"> Bin Loader </button>
