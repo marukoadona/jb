@@ -10,6 +10,7 @@
   display:inline-table;
   margin-right: 10px;
   shadow: none;
+  font-weight: bold;
 
 }
 
@@ -27,7 +28,7 @@
 .header {
   padding: 10px;
   text-align: center;
-  background-image: url('3.jpg');
+  /*background-image: url('waves.jpg');*/
   background-size: 100% 100%;
   color: black;
   font-size: 15px;
@@ -45,15 +46,16 @@
 <meta charset="utf-8"/>
 <div class="header"><h1 id=msgs>6.72 Exploit Menu v7 by Leeful</h1>
 <p style="font-size:18px;"><strong>UI by MarukoAdona</strong></p>
-<div style="font-size:20px;">Pass = <span id=passCounter></span>&nbsp;&nbsp;:&nbsp;&nbsp;Fail = <span id=failCounter></span></div><hr>
+<div style="font-size:20px;">Pass = <span id=passCounter></span>&nbsp;&nbsp;:&nbsp;&nbsp;Fail = <span id=failCounter></span></div><br><hr>
 <script>
 function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Installing Offline Cache: " + Percent + "%";}
 function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cache Installed Successfully";},1000);setTimeout(function(){window.msgs.innerHTML="Now Close And Re-Open Your Browser";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
 </script></div>
 </head>
 <script src="exp_webkit.js"></script>
-<body>
-<br><br>
+<body style="background-image: url('3.jpg');
+background-size: 100% 100%;">
+<br><br><br>
 <div style="text-align:center;margin-top: 150px;">
 <button class="button button1"onclick="load_exploit_HEN(); return false"> HEN v2.1.3</button><br><br>
 <button class="button"onclick="load_exploit_MIRA(); return false"> Mira </button>
@@ -249,6 +251,6 @@ var script = document.createElement('script');script.src = "pl_fanthresh.js";doc
 var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
 }
 </script>
-<p style="position:absolute; bottom:0px;font-size:20px;">Delete Cookies and Clear Website Data first, and everytime you change a Host</p>
+<p style="position:absolute; bottom:0px;font-size:17px;">Delete Cookies and Clear Website Data first and everytime you change a Host</p>
 </body>
 </html>
