@@ -50,10 +50,14 @@
 function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Installing Offline Cache: " + Percent + "%";}
 function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cache Installed Successfully";},1000);setTimeout(function(){window.msgs.innerHTML="Now Close And Re-Open Your Browser";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
 </script></div>
-
+<script>
+  function showAlert() {
+    alert ("Hello world!");
+  }
+  </script>
 </head>
 <script src="exp_webkit.js"></script>
-<body>
+<body onload="showOverlay()">
 <br><br>
 <div style="text-align:center;margin-top: 150px;">
 <button class="button button1"onclick="load_exploit_HEN(); return false"> HEN v2.1.3</button><br><br>
@@ -83,12 +87,7 @@ function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cac
 <button class="button"onclick="load_linux(); return false"> Linux </button>
 <br><br>
 <button class="button"onclick="load_fanthresh(); return false"> Set Fan Threshold </button><select id="tempC"class="button"></select>&#176;C<br><br>( The PS4's default temp is 79&#176;C )
-<div id="popup">
-    <div>
-        <div id="popup-close">X</div>
-            <h2>Content Goes Here</h2>
-    </div>
-</div>
+
 <script>
 for(var i=40; i<=79; i++){
     var select = document.getElementById("tempC");
@@ -107,21 +106,41 @@ window.passCounter.innerHTML=localStorage.passcount;
 if (localStorage.failcount == null) localStorage.failcount=0;
 window.failCounter.innerHTML=localStorage.failcount;
 </script>
-<script type="text/javascript" src="scripts/jquery.cookies.2.2.0.min.js"></script>
 <br>
 <script>
-$j(document).ready(function() {
-    $j("#popup").delay(2000).fadeIn();
-    $j('#popup-close').click(function(e) // You are clicking the close button
-    {
-    $j('#popup').fadeOut(); // Now the pop up is hiden.
-    });
-    $j('#popup').click(function(e)
-    {
-    $j('#popup').fadeOut();
-    });
-});
+ function showAlert() {
+   var myText = "Delete Cookies and Clear Website Data First...!";
+   alert (myText);
+ }
+ </script>
+<script>
+function getCookie(name) {
+  var name = name + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 
+function setCookie(name, value, mins) {
+  var d = new Date();
+  d.setTime(d.getTime() + (mins*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+function deleteCookie(name) {
+  document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+  
 function load_exploit_HEN(){
 msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Exploit And HEN ...</h1>";
 LoadedMSG="Exploit And HEN Loaded ✔ - Press Circle To Exit";
