@@ -1,1 +1,1 @@
- Change UI only in version 7, Credit to Leeful
+ Change UI only in version 7, Credit to Leeful.
