@@ -1,56 +1,60 @@
 <html manifest="cache.manifest">
 <head>
-<title>6.72 Exploit Menu v7</title>
+   <title>6.72 Exploit Menu v7</title>
 <meta charset="utf-8"/>
-    <div class="header"><h1 id=msgs>6.72 Exploit Menu v7 by Leeful</h1>
-    <p style="font-size:18px;"><strong>UI by MarukoAdona</strong></p>
-    <div style="font-size:20px;">Pass = <span id=passCounter></span>&nbsp;&nbsp;:&nbsp;&nbsp;Fail = <span id=failCounter></span></div><br><hr>
-    <script>
-    function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Installing Offline Cache: " + Percent + "%";}
-    function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cache Installed Successfully";},1000);setTimeout(function(){window.msgs.innerHTML="Now Close And Re-Open Your Browser";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
-    </script></div>
-</head>
- <style>
-    .button {
-      background-color:black;
-      border-radius: 5px;
-      color: white;
-      padding: .8em;
-      text-decoration: none;
-      height:40px;
-      display:inline-table;
-      margin-right: 10px;
-      shadow: none;
-      font-weight: bold;
 
-    }
+   <style>
+     .button {
+       background-color:black;
+       border-radius: 5px;
+       color: white;
+       padding: .8em;
+       text-decoration: none;
+       height:40px;
+       display:inline-table;
+       margin-right: 10px;
+       shadow: none;
+       font-weight: bold;
 
-    .button:focus,
-    .button:hover {
-      background-color:white;
-      color: black;
-      outline: none;
-      -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
-         -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
-              box-shadow: inset 0px 0px 5px #c1c1c1;
+     }
 
-    }
+     .button:focus,
+     .button:hover {
+       background-color:white;
+       color: black;
+       outline: none;
+       -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+          -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+               box-shadow: inset 0px 0px 5px #c1c1c1;
 
-    .header {
-      padding: 10px;
-      text-align: center;
-      background-size: 100% 100%;
-      color: black;
-      font-size: 15px;
-      position: fixed;
-      width: 100%;
+     }
 
-    }
-    .button1{
-      padding-left: 110px;
-      padding-right: 110px;
-    }
- </style>
+     .header {
+       padding: 10px;
+       text-align: center;
+       background-size: 100% 100%;
+       color: black;
+       font-size: 15px;
+       position: fixed;
+       width: 100%;
+
+     }
+     .button1{
+       padding-left: 110px;
+       padding-right: 110px;
+     }
+   </style>
+
+      <div class="header"><h1 id=msgs>6.72 Exploit Menu v7 by Leeful</h1>
+      <p style="font-size:18px;"><strong>UI by MarukoAdona</strong></p>
+      <div style="font-size:20px;">Pass = <span id=passCounter></span>&nbsp;&nbsp;:&nbsp;&nbsp;Fail = <span id=failCounter></span></div><br><hr>
+      <script>
+      function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Installing Offline Cache: " + Percent + "%";}
+      function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cache Installed Successfully";},1000);setTimeout(function(){window.msgs.innerHTML="Now Close And Re-Open Your Browser";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+      </script></div>
+      <script src="exp_webkit.js"></script>
+  </head>
+
 <body style="background-image: url('3.jpg');background-size: 100% 100%;">
     <br><br><br>
     <div style="text-align:center;margin-top: 150px;">
@@ -81,7 +85,7 @@
     <button class="button"onclick="load_linux(); return false"> Linux </button>
     <br><br>
     <button class="button"onclick="load_fanthresh(); return false"> Set Fan Threshold </button><select id="tempC"class="button"></select>&#176;C<br><br>( The PS4's default temp is 79&#176;C )
-  <script src="exp_webkit.js"></script>
+
   <script>
     for(var i=40; i<=79; i++){
         var select = document.getElementById("tempC");
@@ -101,7 +105,7 @@
     window.failCounter.innerHTML=localStorage.failcount;
   </script>
     <br>
-    <script>
+  <script>
 function load_exploit_HEN(){
 msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Exploit And HEN ...</h1>";
 LoadedMSG="Exploit And HEN Loaded ✔ - Press Circle To Exit";
@@ -243,11 +247,12 @@ var script = document.createElement('script');script.src = "exp_loader.js";docum
 
 function load_fanthresh(){
 msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Fan Threshold ...</h1>";
-LoadedMSG="Fan Threshold Loaded ✔";fanTemp=tempC.value;//alert(fanTemp);
+LoadedMSG="Fan Threshold Loaded ✔";fanTemp=tempC.value;
 var script = document.createElement('script');script.src = "pl_fanthresh.js";document.getElementsByTagName('head')[0].appendChild(script);
 var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
 }
+
 </script>
-<p style="position:absolute; bottom:0px;font-size:17px;"> Delete Cookies and Clear Website Data first and everytime you change a Host</p>
+    <p style="position:absolute; bottom:0px;font-size:17px;"> Delete Cookies and Clear Website Data first and everytime you change a Host</p>
 </body>
 </html>
