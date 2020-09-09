@@ -1,9 +1,9 @@
 <html manifest="cache.manifest">
 <style>
 .button {
-  background-color: #F0F8FF;
+  background-color:black;
   border-radius: 5px;
-  color: black;
+  color: white;
   padding: .8em;
   text-decoration: none;
   height:40px;
@@ -15,7 +15,7 @@
 
 .button:focus,
 .button:hover {
-  background-color:#4169e1;
+  background-color:#008080;
   color: white;
   outline: none;
   -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
@@ -69,18 +69,18 @@ function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cac
 <button class="button"onclick="load_historyblock(); return false"> History Blocker </button>
 <button class="button"onclick="load_kerneldump(); return false"> Kernel Dumper </button>
 <br><br>
-<button class="button"onclick="load_ftp(); return false"> FTP </button>
-<button class="button"onclick="load_linux(); return false"> Linux </button>
+<button class="button"onclick="load_dbBackup(); return false"> DB Backup </button>
+<button class="button"onclick="load_dbRestore(); return false"> DB Restore </button>
 <button class="button"onclick="load_app2usb(); return false"> App2USB </button>
 <button class="button"onclick="load_webrte(); return false"> WebRTE </button>
 <button class="button"onclick="load_ps4debug(); return false"> PS4debug </button>
 <button class="button"onclick="load_dumper(); return false"> Dumper </button>
 <br><br>
-<button class="button"onclick="load_dbBackup(); return false"> DB Backup </button>
-<button class="button"onclick="load_dbRestore(); return false"> DB Restore </button>
 <button class="button"onclick="load_todex(); return false"> ToDEX </button>
 <button class="button"onclick="load_todev(); return false"> ToDEV </button>
 <button class="button"onclick="load_tokratos(); return false"> ToKratos </button>
+<button class="button"onclick="load_ftp(); return false"> FTP </button>
+<button class="button"onclick="load_linux(); return false"> Linux </button>
 <br><br>
 <button class="button"onclick="load_fanthresh(); return false"> Set Fan Threshold </button><select id="tempC"class="button"></select>&#176;C<br><br>( The PS4's default temp is 79&#176;C )
 <script>
