@@ -33,7 +33,7 @@
   font-size: 15px;
   position: fixed;
   width: 100%;
-  
+
 }
 .button1{
   padding-left: 113px;
@@ -43,10 +43,9 @@
 <head>
 <title>6.72 Exploit Menu v7</title>
 <meta charset="utf-8"/>
-<div class="header"><h1 id=msgs>6.72 Exploit Menu v7 by Leeful</h1>
+<div class="header;"><h1 id=msgs>6.72 Exploit Menu v7 by Leeful</h1>
 <p style="font-size:18px;"><strong>UI by MarukoAdona</strong></p>
 <div style="font-size:20px;">Pass = <span id=passCounter></span>&nbsp;&nbsp;:&nbsp;&nbsp;Fail = <span id=failCounter></span></div>
-
 <script>
 function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Installing Offline Cache: " + Percent + "%";}
 function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cache Installed Successfully";},1000);setTimeout(function(){window.msgs.innerHTML="Now Close And Re-Open Your Browser";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
