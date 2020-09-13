@@ -1,5 +1,6 @@
 <html>
 <body>
+<div text-align= center>Pass = <span id=passCounter></span>&nbsp;&nbsp;:&nbsp;&nbsp;Fail = <span id=failCounter></span></div>
 <script>
 if(document.cookie.indexOf('kex=0') >= 0)
     document.location.href = '.';
@@ -17,7 +18,12 @@ else
 <script src="ps4-hen-vtx.js"></script>
 <script src="mira/c-code.js"></script>
 <script src="pl_WebRTE.js"></script>
-
+<script>
+if (localStorage.passcount == null) localStorage.passcount=0;
+window.passCounter.innerHTML=localStorage.passcount;
+if (localStorage.failcount == null) localStorage.failcount=0;
+window.failCounter.innerHTML=localStorage.failcount;
+</script>
 <script>
 alert("You're all set!");
 read_ptr_at(0);
