@@ -26406,7 +26406,7 @@ var _ = malloc_nogc.pop();
 var _ = malloc_nogc.pop();
 
 if (main_ret == 179 || main_ret == 0) {
-window.msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Exploit Loaded ✔ Now click HEN ONLY</h1>";
+window.msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Exploit Loaded ✔ Now click HEN ONLY</h1>";}
 
 if (ExploitMira != null){
 	if (ExploitMira == "HEN"){window.msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Exploit Loaded ✔ Now Loading HEN ...</h1>";}
