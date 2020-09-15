@@ -6,10 +6,12 @@ index.html
 3.jpg
 exp_webkit.js
 exp_kernelHEN.js
+exp_kernelHENb.js
 exp_kernelMira.js
 exp_kernelMiraNoHB.js
 exp_kernelMiraUN.js
 exp_loader.js
+exp_jailbreak.js
 exp_BinLoader.js
 pl_updatesDisable.js
 pl_updatesEnable.js
@@ -18,6 +20,7 @@ pl_historyBlocker.js
 pl_app2usb.js
 pl_dumper.js
 pl_ftp.js
+pl_HEN.js
 pl_linux.js
 pl_dbBackup.js
 pl_dbRestore.js
