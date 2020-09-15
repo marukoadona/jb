@@ -53,8 +53,7 @@
       function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cache Installed Successfully";},1000);setTimeout(function(){window.msgs.innerHTML="Now Close And Re-Open Your Browser";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
       </script></div>
       <script src="exp_webkit.js"></script>
-      <script src="exp_jailbreak.js"></script>
-      <script src="exp_common.js"></script>
+
       <script>
       var timeleft = 10;
       var downloadTimer = setInterval(function(){
@@ -62,7 +61,7 @@
           clearInterval(downloadTimer);
           document.getElementById("countdown").innerHTML = "Can jailbreak now!";
         } else {
-          document.getElementById("countdown").innerHTML = timeleft + "seconds before you click the button";
+          document.getElementById("countdown").innerHTML = timeleft+"&nbsp;seconds";
         }
         timeleft -= 1;
       }, 1000);
