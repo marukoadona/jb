@@ -61,6 +61,16 @@
       window.passCounter.innerHTML=localStorage.passcount;
       if (localStorage.failcount == null) localStorage.failcount=0;
       window.failCounter.innerHTML=localStorage.failcount;
+    
+      if(main_ret == 179 /* already hacked */ || main_ret == 0 /* success */)
+{
+    localStorage.passcount = ++localStorage.passcount;window.passCounter.innerHTML=localStorage.passcount;
+    alert("Exploit loaded! Now close and re-open your browser");
+    read_ptr_at(0);
+}
+else
+    localStorage.failcount = ++localStorage.failcount;window.failCounter.innerHTML=localStorage.failcount;
+    alert("Jailbreak failed! Reboot your PS4 and try again.");
        </script>
 </body>
 
