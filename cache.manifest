@@ -2,6 +2,8 @@ CACHE MANIFEST
 # v7
 # 01/09/2020-10:00:57.44
 
+index.html
+3.jpg
 exp_webkit.js
 exp_kernelHEN.js
 exp_kernelHENb.js
@@ -29,4 +31,3 @@ pl_WebRTE.js
 pl_fanthresh.js
 pl_ps4debug.js
 pl_HEN.js
-
