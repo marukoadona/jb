@@ -77,7 +77,8 @@
     <br><br>
     <div style="text-align:center;margin-top: 150px;">
     <div id="countdown">Please wait!</div><br>
-    <button class="button button1"onclick="load_exploit_HEN(); return false"> JB+HEN v2.1.3</button><br><br>
+    <button class="button button1"onclick="load_exploit_HEN(); return false"> JB+HEN v2.1.3</button>
+    <button class="button button1"onclick="load_exploit_HENb(); return false"> JB+HEN v2.1.3B</button><br><br>
     <button class="button"onclick="load_exploit_MIRA(); return false"> JB+Mira </button>
     <button class="button"onclick="load_exploit_MIRAunoff(); return false"> JB+Mira (Unofficial)</button>
     <button class="button"onclick="load_exploit_MIRAnohb(); return false"> JB+Mira (NoHB) </button>
@@ -130,12 +131,12 @@
     function loadScript(){getScript("exp_kernelHEN.js",function(){setTimeout(jailbreak,500);});}loadScript();
     }
 
-    /*function load_exploit_HENb(){
+    function load_exploit_HENb(){
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Exploit And HEN ...</h1>";
     LoadedMSG="Exploit And HEN Loaded ✔ - Press Circle To Exit";
     function getScript(source,callback){var gs=document.createElement('script');gs.src=source;gs.onload=callback;gs.async=false;document.body.appendChild(gs);}
     function loadScript(){getScript("exp_kernelHENb.js",function(){setTimeout(jailbreak,500);});}loadScript();
-  }*/
+    }
 
     function load_exploit_MIRA(){
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Exploit And Mira ...</h1>";
