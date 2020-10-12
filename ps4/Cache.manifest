@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# random: 64cf3bf61c2c590a5deb6138d6256338
+# random: b52d0109460c916257e23c00c68c8435
 
 CACHE:
 common/exploit.js
@@ -29,8 +29,7 @@ spoofer.html
 spoofer.js
 todex.html
 todex.js
-pl_WebRTE.html
-pl_WebRTE.js
+PSN.png
 
 NETWORK:
 *
